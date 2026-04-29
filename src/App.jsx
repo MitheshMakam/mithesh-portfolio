@@ -172,7 +172,7 @@ export default function App() {
         </p>
         <div className="contact-links">
           <a href="mitheshmakam6@gmail.com" className="contact-link">📧 Email Me</a>
-          <a href="https://linkedin.com/in/mithesh" className="contact-link" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+          <a href="https://linkedin.com/in/mithesh-makam-83a12737b" className="contact-link" target="_blank" rel="noreferrer">💼 LinkedIn</a>
           <a href="https://github.com/MitheshMakam" className="contact-link" target="_blank" rel="noreferrer">🐙 GitHub</a>
           <a href="/resume.pdf" className="contact-link" target="_blank" rel="noreferrer">📄 Resume PDF</a>
         </div>
