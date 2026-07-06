@@ -50,7 +50,7 @@ npm start
 ## 📫 Contact
 
 * Email: mitheshmakam@gmail.com
-* LinkedIn: (add link)
+* LinkedIn: linkedin.com/in/mithesh-makam-83a12737b
 
 ---
 
