@@ -174,7 +174,7 @@ export default function App() {
           <a href="mailto:mitheshmakam6@gmail.com" className="contact-link">📧 Email Me</a>
           <a href="https://linkedin.com/in/mithesh-makam-83a12737b" className="contact-link" target="_blank" rel="noreferrer">💼 LinkedIn</a>
           <a href="https://github.com/MitheshMakam" className="contact-link" target="_blank" rel="noreferrer">🐙 GitHub</a>
-          <a href="/Resume.pdf" className="contact-link" target="_blank" rel="noreferrer">📄 Resume PDF</a>
+          <a href="/Mithesh_Makam_Resume.pdf" className="contact-link" target="_blank" rel="noreferrer">📄 Resume PDF</a>
         </div>
       </section>
 
