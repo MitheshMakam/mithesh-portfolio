@@ -5,7 +5,7 @@ This project showcases my skills, projects, and journey as a developer.
 
 ## 🌍 Live Demo
 
-https://mithesh-portfolio-sigma.vercel.app/
+https://mithesh.vercel.app/
 
 ---
 
