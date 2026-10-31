@@ -1,17 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0f" />
-    <meta name="description" content="Mithesh | BCA Developer Portfolio" />
-    <title>Mithesh | Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mithesh Makam | Full Stack + AI Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--s1:#111118;--s2:#1a1a24;--a:#6ee7b7;--a2:#818cf8;--text:#f1f5f9;--muted:#64748b;--bd:#1e1e2e;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);background:rgba(10,10,15,0.85)}
+.logo{font-family:var(--mono);font-size:.95rem;font-weight:700;color:var(--a);letter-spacing:.05em}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.78rem;font-family:var(--mono);letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--a)}
+#hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2.5rem 4rem;position:relative;overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;max-width:1200px;margin:0 auto;width:100%}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.1;pointer-events:none}
+.o1{width:600px;height:600px;background:var(--a2);top:-250px;right:-150px}
+.o2{width:450px;height:450px;background:var(--a);bottom:-150px;left:-180px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;color:var(--a);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;padding:.3rem .8rem;border:1px solid rgba(110,231,183,.2);border-radius:4px;background:rgba(110,231,183,.05)}
+.dot{width:7px;height:7px;background:var(--a);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1.hero-name{font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800;line-height:1.0;letter-spacing:-.03em}
+h1.hero-name span{color:var(--a2)}
+.tagline{margin-top:1.4rem;font-family:var(--mono);font-size:.86rem;color:var(--muted);line-height:2.0}
+.tagline em{font-style:normal;color:var(--a)}
+.cta{display:flex;gap:.9rem;margin-top:2.5rem;flex-wrap:wrap}
+.btn1{padding:.7rem 1.8rem;background:var(--a);color:#0a0a0f;border-radius:4px;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.05em;transition:all .2s;font-family:var(--mono)}
+.btn1:hover{background:#a7f3d0}
+.btn2{padding:.7rem 1.8rem;border:1px solid var(--bd);color:var(--muted);border-radius:4px;text-decoration:none;font-size:.8rem;letter-spacing:.05em;transition:all .2s;font-family:var(--mono)}
+.btn2:hover{border-color:var(--a2);color:var(--a2)}
+.hero-card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:1.7rem;position:relative}
+.hero-card::before{content:'';position:absolute;top:-1px;left:2rem;right:2rem;height:2px;background:linear-gradient(90deg,var(--a),var(--a2));border-radius:2px}
+.code-block{font-family:var(--mono);font-size:.78rem;color:var(--muted);line-height:2.0;background:var(--s2);border-radius:8px;padding:1.1rem;margin-bottom:1.2rem}
+.kw{color:var(--a2)}.key{color:var(--a)}.str{color:#f9a8d4}.num{color:#fcd34d}.str2{color:#86efac}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.stat{text-align:center;padding:.8rem;background:var(--s2);border-radius:8px}
+.sn{font-size:1.2rem;font-weight:700;color:var(--a)}
+.sl{font-size:.66rem;color:var(--muted);font-family:var(--mono);margin-top:3px}
+section{padding:5rem 2.5rem;max-width:1200px;margin:0 auto}
+.sec-label{font-family:var(--mono);font-size:.67rem;color:var(--a);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
+.sec-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:2.5rem}
+.sec-title span{color:var(--a2)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem}
+.exp-card{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.5rem;transition:border-color .25s;position:relative;overflow:hidden}
+.exp-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a2),transparent);opacity:0;transition:opacity .25s}
+.exp-card:hover{border-color:var(--a2)}
+.exp-card:hover::after{opacity:1}
+.exp-role{font-size:.95rem;font-weight:700;line-height:1.3}
+.exp-co{font-size:.72rem;font-family:var(--mono);color:var(--a);margin-top:.2rem;margin-bottom:.9rem}
+.exp-bullets{list-style:none}
+.exp-bullets li{font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.75;padding:.22rem 0;border-bottom:1px solid var(--bd);display:flex;gap:.55rem}
+.exp-bullets li:last-child{border-bottom:none}
+.exp-bullets li::before{content:'▸';color:var(--a);flex-shrink:0}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.proj-card{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.6rem;position:relative;overflow:hidden;transition:all .3s}
+.proj-card:hover{border-color:var(--a2);transform:translateY(-3px)}
+.proj-feat{grid-column:span 2}
+.stripe{position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
+.proj-card:hover .stripe{opacity:1}
+.sg{background:linear-gradient(90deg,var(--a),transparent)}
+.sp{background:linear-gradient(90deg,var(--a2),transparent)}
+.ptop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.85rem}
+.pico{font-size:1.4rem}
+.plinks{display:flex;gap:.45rem}
+.plink{font-size:.66rem;font-family:var(--mono);padding:.26rem .6rem;border:1px solid var(--bd);border-radius:4px;color:var(--muted);text-decoration:none;transition:all .2s}
+.plink:hover{border-color:var(--a);color:var(--a)}
+.hack-badge{font-size:.62rem;font-family:var(--mono);padding:.2rem .55rem;background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.3);border-radius:3px;color:#fbbf24}
+.ptitle{font-size:1.02rem;font-weight:700;margin-bottom:.4rem}
+.pdesc{font-size:.77rem;font-family:var(--mono);color:var(--muted);line-height:1.8;margin-bottom:1rem}
+.ptech{display:flex;flex-wrap:wrap;gap:.35rem}
+.pill{font-size:.64rem;font-family:var(--mono);padding:.2rem .55rem;background:var(--s2);border-radius:3px;color:var(--a2)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.sk-block{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.4rem}
+.sk-cat{font-size:.67rem;font-family:var(--mono);color:var(--a2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.85rem}
+.sk-row{display:flex;justify-content:space-between;align-items:center;padding:.32rem 0;border-bottom:1px solid var(--bd);font-size:.76rem;font-family:var(--mono);color:var(--muted)}
+.sk-row:last-child{border-bottom:none}
+.dots{display:flex;gap:3px}
+.d{width:6px;height:6px;border-radius:50%;background:var(--bd)}
+.d.on{background:var(--a)}
+.resume-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:16px;padding:2.5rem;max-width:900px;margin:0 auto}
+.resume-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bd)}
+.rname{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.rname span{color:var(--a2)}
+.rcontact{font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:2.0;text-align:right}
+.rcontact a{color:var(--a);text-decoration:none}
+.rdl{display:inline-flex;align-items:center;gap:.6rem;padding:.65rem 1.3rem;background:var(--a);color:#0a0a0f;border-radius:6px;text-decoration:none;font-family:var(--mono);font-size:.76rem;font-weight:700;transition:all .2s;margin-top:.7rem}
+.rdl:hover{background:#a7f3d0}
+.rsec{margin-bottom:1.8rem}
+.rsec-title{font-size:.67rem;font-family:var(--mono);color:var(--a);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.9rem;padding-bottom:.4rem;border-bottom:1px solid var(--bd)}
+.robj{font-family:var(--mono);font-size:.77rem;color:var(--muted);line-height:1.9}
+.rexp-item{margin-bottom:1.2rem}
+.rexp-item:last-child{margin-bottom:0}
+.rexp-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.3rem}
+.rexp-role{font-size:.88rem;font-weight:700}
+.rexp-co{font-size:.72rem;font-family:var(--mono);color:var(--a2);margin-top:.1rem}
+.rexp-loc{font-size:.7rem;font-family:var(--mono);color:var(--muted)}
+.rbullets{list-style:none;margin-top:.45rem}
+.rbullets li{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.75;padding:.15rem 0;display:flex;gap:.5rem}
+.rbullets li::before{content:'•';color:var(--a);flex-shrink:0}
+.rproj-item{margin-bottom:.9rem}
+.rproj-item:last-child{margin-bottom:0}
+.rproj-name{font-size:.84rem;font-weight:700}
+.rproj-stack{font-size:.68rem;font-family:var(--mono);color:var(--muted);margin-bottom:.25rem}
+.rskills-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.rsk-row{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.75}
+.rsk-label{color:var(--text);font-weight:600;font-size:.73rem}
+.contact-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:16px;padding:3.5rem;text-align:center;max-width:680px;margin:0 auto 4rem;position:relative;overflow:hidden}
+.contact-wrap::before{content:'';position:absolute;top:-1px;left:3rem;right:3rem;height:2px;background:linear-gradient(90deg,transparent,var(--a),var(--a2),transparent)}
+.contact-sub{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin:.9rem 0 2rem;line-height:1.9}
+.clinks{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.clink{display:flex;align-items:center;gap:.4rem;padding:.62rem 1.3rem;border:1px solid var(--bd);border-radius:6px;font-family:var(--mono);font-size:.76rem;color:var(--muted);text-decoration:none;transition:all .2s}
+.clink:hover{border-color:var(--a);color:var(--a)}
+.cert-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.cert{font-size:.68rem;font-family:var(--mono);padding:.22rem .65rem;border:1px solid var(--bd);border-radius:4px;color:var(--muted)}
+footer{text-align:center;padding:1.8rem;font-family:var(--mono);font-size:.7rem;color:var(--muted);border-top:1px solid var(--bd)}
+@media(max-width:768px){.hero-inner,.proj-grid,.sk-grid,.exp-grid{grid-template-columns:1fr}.proj-feat{grid-column:span 1}.stats{grid-template-columns:1fr 1fr}.contact-wrap,.resume-wrap{padding:1.8rem}.resume-header{flex-direction:column;gap:1rem}.rcontact{text-align:left}.rskills-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">mithesh.dev</div>
+  <ul class="nav-links">
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#resume">resume</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="dot"></span>open to internships &amp; full-time roles</div>
+      <h1 class="hero-name">Mithesh<br><span>Makam</span></h1>
+      <p class="tagline">
+        <em>Full Stack + AI Engineer</em> — Pune, India.<br>
+        Multi-agent systems · LLM APIs · Scalable web apps.<br>
+        BCA @ VCACS · CGPA 9.09 · Targeting <em>FAANG-level</em> product roles.
+      </p>
+      <div class="cta">
+        <a href="#projects" class="btn1">View Projects →</a>
+        <a href="#resume" class="btn2">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="code-block">
+        <span class="kw">const</span> mithesh = {<br>
+        &nbsp;&nbsp;<span class="key">role</span>: <span class="str">"Full Stack + AI Eng"</span>,<br>
+        &nbsp;&nbsp;<span class="key">stack</span>: [<span class="str">"React"</span>, <span class="str">"Node"</span>, <span class="str">"FastAPI"</span>],<br>
+        &nbsp;&nbsp;<span class="key">ai</span>: [<span class="str">"Gemini"</span>, <span class="str">"Codex"</span>, <span class="str">"Agents"</span>],<br>
+        &nbsp;&nbsp;<span class="key">cgpa</span>: <span class="num">9.09</span>,<br>
+        &nbsp;&nbsp;<span class="key">status</span>: <span class="str2">"building"</span><br>
+        }
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="sn">3</div><div class="sl">internships</div></div>
+        <div class="stat"><div class="sn">5+</div><div class="sl">live projects</div></div>
+        <div class="stat"><div class="sn">9.09</div><div class="sl">CGPA</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label">// 01. experience</div>
+  <h2 class="sec-title">Where I've <span>Worked</span></h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-role">AI for Sustainability Intern</div>
+      <div class="exp-co">IBM · Virtual</div>
+      <ul class="exp-bullets">
+        <li>Built AirWise — an AI-powered air quality advisor using a multi-agent architecture as the core internship deliverable.</li>
+        <li>Applied Agentic AI, RAG, and responsible AI concepts to UN SDG-aligned sustainability problems.</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="exp-role">Full Stack Web Developer Intern</div>
+      <div class="exp-co">VaultOfCodes · Remote</div>
+      <ul class="exp-bullets">
+        <li>Designed, built, and deployed EditKaro end-to-end — independently owned the full dev lifecycle.</li>
+        <li>Engineered a config-driven filter system; new-client setup dropped from a multi-day rebuild to one change.</li>
+        <li>Resolved 4 production bug classes: codec errors, range-request failures, JS race conditions, CSS conflicts.</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="exp-role">Full Stack Developer Intern</div>
+      <div class="exp-co">Beeskilled · Remote</div>
+      <ul class="exp-bullets">
+        <li>Shipped frontend and backend feature tickets across multiple sprints in an agile team workflow.</li>
+        <li>Performed REST API testing and debugging with Postman, catching integration issues before release.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-label">// 02. projects</div>
+  <h2 class="sec-title">What I've <span>Built</span></h2>
+  <div class="proj-grid">
+
+    <div class="proj-card proj-feat">
+      <div class="stripe sg"></div>
+      <div class="ptop">
+        <div style="display:flex;align-items:center;gap:.75rem">
+          <div class="pico">🤖</div>
+          <span class="hack-badge">🏆 Codex Hackathon 2026</span>
+        </div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://codemedic-repo.vercel.app/" class="plink" target="_blank">Live →</a>
+        </div>
+      </div>
+      <div class="ptitle">CodeMedic AI — Multi-Agent Code Review Pipeline</div>
+      <div class="pdesc">Orchestrated a 5-agent system: repository analysis → architecture summarization → bug detection → security review → README + test generation. Achieved Lighthouse 100 across performance, accessibility, and SEO with sub-0.5s load time. Submitted to ChatGPT Codex Hackathon 2026 (Agentic Coding track) with a 13-slide architecture pitch deck.</div>
+      <div class="ptech">
+        <span class="pill">Multi-Agent Systems</span><span class="pill">Python</span><span class="pill">LLM APIs</span><span class="pill">Agentic AI</span><span class="pill">Lighthouse 100</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="stripe sp"></div>
+      <div class="ptop">
+        <div class="pico">🧠</div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://valuora.vercel.app/" class="plink" target="_blank">Live →</a>
+        </div>
+      </div>
+      <div class="ptitle">Valuora — AI Product Decision Engine</div>
+      <div class="pdesc">E-commerce intelligence tool using Gemini 2.0 Flash to generate BUY / WAIT / AVOID verdicts via price tracking, fake-review detection, and trust scoring across 7 platforms including Amazon and Flipkart. Server-side API keys + 10 req/min rate limiting.</div>
+      <div class="ptech">
+        <span class="pill">Next.js</span><span class="pill">TypeScript</span><span class="pill">Gemini 2.0 Flash</span><span class="pill">Rate Limiting</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="stripe sg"></div>
+      <div class="ptop">
+        <div class="pico">📄</div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://resumetrack.vercel.app/" class="plink" target="_blank">Live →</a>
+        </div>
+      </div>
+      <div class="ptitle">Resume Tracker AI — ATS Scorer + Job Matcher</div>
+      <div class="pdesc">Full-stack resume analyzer computing ATS scores and matching candidates to live job listings via the Adzuna API. Recruiter dashboard shows applicant volume, ATS-qualified rate, and average match score.</div>
+      <div class="ptech">
+        <span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">Adzuna API</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="stripe sp"></div>
+      <div class="ptop">
+        <div class="pico">🌿</div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+        </div>
+      </div>
+      <div class="ptitle">AirWise — AI Air Quality Advisor</div>
+      <div class="pdesc">Multi-agent AI system for air quality analysis built during IBM AI for Sustainability internship. Applied Agentic AI, RAG, and responsible AI principles to address UN SDG-aligned sustainability challenges.</div>
+      <div class="ptech">
+        <span class="pill">Multi-Agent AI</span><span class="pill">RAG</span><span class="pill">Agentic AI</span><span class="pill">IBM</span><span class="pill">UN SDGs</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="stripe sg"></div>
+      <div class="ptop">
+        <div class="pico">📋</div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+        </div>
+      </div>
+      <div class="ptitle">LessGo — Placement Preparation Platform</div>
+      <div class="pdesc">Placement-prep platform with a Kanban tracker, 30+ company-tagged LeetCode problems, and daily streaks. Computes a Placement Readiness Score from application progress, streak consistency, and DSA problem data.</div>
+      <div class="ptech">
+        <span class="pill">Next.js</span><span class="pill">Node.js</span><span class="pill">PostgreSQL</span><span class="pill">Prisma ORM</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="stripe sp"></div>
+      <div class="ptop">
+        <div class="pico">🎬</div>
+        <div class="plinks">
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://editkaroport.vercel.app/" class="plink" target="_blank">Live →</a>
+        </div>
+      </div>
+      <div class="ptitle">EditKaro — Video Agency Portfolio Platform</div>
+      <div class="pdesc">Data-driven, reskinnable portfolio site for a video editing agency. Content, videos, and styling update via config — no core logic changes needed. Fixed 4 cross-browser media bug classes in production.</div>
+      <div class="ptech">
+        <span class="pill">JavaScript</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">VaultOfCodes</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">// 03. skills</div>
+  <h2 class="sec-title">Tech <span>Stack</span></h2>
+  <div class="sk-grid">
+    <div class="sk-block">
+      <div class="sk-cat">Frontend</div>
+      <div class="sk-row">React.js <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+      <div class="sk-row">Next.js + TypeScript <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+      <div class="sk-row">HTML + CSS <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+      <div class="sk-row">Responsive Design <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+    </div>
+    <div class="sk-block">
+      <div class="sk-cat">Backend + AI</div>
+      <div class="sk-row">Node.js + Express <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+      <div class="sk-row">Python + FastAPI <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+      <div class="sk-row">LLM APIs + Agents <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+      <div class="sk-row">RESTful APIs <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+    </div>
+    <div class="sk-block">
+      <div class="sk-cat">DB + Tools</div>
+      <div class="sk-row">PostgreSQL + Prisma <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+      <div class="sk-row">SQL + DBMS <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div><div class="d"></div></div></div>
+      <div class="sk-row">Git + GitHub <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+      <div class="sk-row">Docker + Vercel <div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div><div class="d"></div></div></div>
+    </div>
+  </div>
+  <div class="cert-row">
+    <span class="cert">🎓 Google — Agentic AI</span>
+    <span class="cert">🎓 Microsoft — C#</span>
+    <span class="cert">🎓 Kaggle Learning</span>
+    <span class="cert">🎓 IBM SkillsBuild — AI for Sustainability</span>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="sec-label">// 04. resume</div>
+  <h2 class="sec-title">My <span>Resume</span></h2>
+  <div class="resume-wrap">
+    <div class="resume-header">
+      <div>
+        <div class="rname">Mithesh <span>Makam</span></div>
+        <div style="font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.5rem;line-height:1.9">
+          Pune, Maharashtra · +91 9922938697<br>
+          mitheshmakam6@gmail.com
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="rcontact">
+          <a href="https://linkedin.com/in/mithesh-makam-83a12737b" target="_blank">LinkedIn ↗</a><br>
+          <a href="https://github.com/MitheshMakam" target="_blank">GitHub ↗</a>
+        </div>
+        <a href="/resume.pdf" class="rdl" target="_blank">⬇ Download PDF</a>
+      </div>
+    </div>
+    <div class="rsec">
+      <div class="rsec-title">Career Objective</div>
+      <div class="robj">Full Stack Web Developer with hands-on experience designing, building, and deploying scalable applications using React.js, Node.js, Express.js, and PostgreSQL. Independently owns projects end-to-end. Pursuing BCA (CGPA 9.09) with foundations in DSA and database management. Targeting a Full Stack + AI role to ship reliable, high-impact software.</div>
+    </div>
+    <div class="rsec">
+      <div class="rsec-title">Experience</div>
+      <div class="rexp-item">
+        <div class="rexp-top"><div><div class="rexp-role">AI for Sustainability Intern</div><div class="rexp-co">IBM · Virtual</div></div><div class="rexp-loc">2024</div></div>
+        <ul class="rbullets"><li>Built AirWise — an AI-powered air quality advisor using multi-agent architecture.</li><li>Applied Agentic AI, RAG, and responsible AI to UN SDG-aligned sustainability problems.</li></ul>
+      </div>
+      <div class="rexp-item">
+        <div class="rexp-top"><div><div class="rexp-role">Full Stack Web Developer Intern</div><div class="rexp-co">VaultOfCodes · Remote</div></div><div class="rexp-loc">2024</div></div>
+        <ul class="rbullets"><li>Built and deployed EditKaro end-to-end; engineered a config-driven filter system.</li><li>Resolved 4 production bug classes: codec, range-request, race conditions, CSS specificity.</li></ul>
+      </div>
+      <div class="rexp-item">
+        <div class="rexp-top"><div><div class="rexp-role">Full Stack Developer Intern</div><div class="rexp-co">Beeskilled · Remote</div></div><div class="rexp-loc">2024</div></div>
+        <ul class="rbullets"><li>Shipped frontend + backend tickets across sprints; debugged REST endpoints with Postman.</li></ul>
+      </div>
+    </div>
+    <div class="rsec">
+      <div class="rsec-title">Projects</div>
+      <div class="rproj-item"><div class="rproj-name">CodeMedic AI <span style="font-size:.65rem;color:#fbbf24;font-family:var(--mono)">· Codex Hackathon 2026</span></div><div class="rproj-stack">Multi-Agent Systems · Python · LLM APIs · Agentic AI</div><ul class="rbullets"><li>5-agent code review pipeline; Lighthouse 100 performance/accessibility/SEO; sub-0.5s load.</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">Valuora — Product Decision Engine</div><div class="rproj-stack">Next.js · TypeScript · Gemini 2.0 Flash</div><ul class="rbullets"><li>BUY/WAIT/AVOID verdicts via price intelligence, fake-review detection, trust scoring (7 platforms).</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">Resume Tracker AI</div><div class="rproj-stack">React · FastAPI · PostgreSQL · Adzuna API</div><ul class="rbullets"><li>ATS scoring, live job matching, recruiter dashboard with volume and match-rate metrics.</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">LessGo — Placement Prep Platform</div><div class="rproj-stack">Next.js · Node.js · PostgreSQL · Prisma ORM</div><ul class="rbullets"><li>Kanban tracker, 30+ company-tagged LeetCode problems, Placement Readiness Score.</li></ul></div>
+    </div>
+    <div class="rsec">
+      <div class="rsec-title">Education</div>
+      <div class="rexp-top">
+        <div><div class="rexp-role">BCA — Vishwakarma College of Arts, Commerce and Science</div><div class="rexp-co">CGPA: 9.09</div></div>
+        <div class="rexp-loc">Expected 2027 · Pune</div>
+      </div>
+    </div>
+    <div class="rsec" style="margin-bottom:0">
+      <div class="rsec-title">Technical Skills</div>
+      <div class="rskills-grid">
+        <div class="rsk-row"><span class="rsk-label">Languages:</span> Python, JavaScript, C#</div>
+        <div class="rsk-row"><span class="rsk-label">Frontend:</span> React.js, Next.js, HTML, CSS</div>
+        <div class="rsk-row"><span class="rsk-label">Backend:</span> Node.js, Express.js, FastAPI, REST APIs</div>
+        <div class="rsk-row"><span class="rsk-label">Database:</span> PostgreSQL, SQL, Prisma ORM</div>
+        <div class="rsk-row"><span class="rsk-label">Tools:</span> Git, GitHub, Vercel, Postman, Docker</div>
+        <div class="rsk-row"><span class="rsk-label">Concepts:</span> Agentic AI, DSA, Full Stack, Agile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="padding-top:0">
+  <div class="contact-wrap">
+    <div class="sec-label" style="text-align:center">// 05. contact</div>
+    <h2 class="sec-title" style="margin-bottom:0">Let's <span>Connect</span></h2>
+    <p class="contact-sub">Actively seeking internships and full-time roles in Full Stack + AI.<br>Target: applied AI engineer or full stack at a product company.</p>
+    <div class="clinks">
+      <a href="mailto:mitheshmakam6@gmail.com" class="clink">📧 Email</a>
+      <a href="https://linkedin.com/in/mithesh-makam-83a12737b" class="clink" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/MitheshMakam" class="clink" target="_blank">🐙 GitHub</a>
+      <a href="/resume.pdf" class="clink" target="_blank">📄 Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>mithesh makam · pune, india · mitheshmakam6@gmail.com · open to opportunities 2026</footer>
+</body>
 </html>
+
