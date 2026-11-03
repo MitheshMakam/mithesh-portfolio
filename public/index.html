@@ -54,7 +54,7 @@ section{padding:5rem 2.5rem;max-width:1200px;margin:0 auto}
 .exp-bullets{list-style:none}
 .exp-bullets li{font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.75;padding:.22rem 0;border-bottom:1px solid var(--bd);display:flex;gap:.55rem}
 .exp-bullets li:last-child{border-bottom:none}
-.exp-bullets li::before{content:'•';color:var(--a);flex-shrink:0}
+.exp-bullets li::before{content:'â€¢';color:var(--a);flex-shrink:0}
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
 .proj-card{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.6rem;position:relative;overflow:hidden;transition:all .3s}
 .proj-card:hover{border-color:var(--a2);transform:translateY(-3px)}
@@ -100,7 +100,7 @@ section{padding:5rem 2.5rem;max-width:1200px;margin:0 auto}
 .rexp-loc{font-size:.7rem;font-family:var(--mono);color:var(--muted)}
 .rbullets{list-style:none;margin-top:.45rem}
 .rbullets li{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.75;padding:.15rem 0;display:flex;gap:.5rem}
-.rbullets li::before{content:'•';color:var(--a);flex-shrink:0}
+.rbullets li::before{content:'â€¢';color:var(--a);flex-shrink:0}
 .rproj-item{margin-bottom:.9rem}
 .rproj-item:last-child{margin-bottom:0}
 .rproj-name{font-size:.84rem;font-weight:700}
@@ -136,6 +136,11 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
 @media(max-width:768px){section{padding:4rem 1.25rem}.hero-inner{grid-template-columns:1fr;gap:2rem}.hero-card{max-width:100%}.exp-grid,.proj-grid,.sk-grid{grid-template-columns:1fr}.proj-feat{grid-column:auto}.proj-card:nth-child(odd){border-right:0}.exp-card,.sk-block{border-right:0}.resume-header{gap:1rem}.resume-header>div:last-child{text-align:left!important}.rcontact{text-align:left}.contact-wrap,.resume-wrap{padding:1.4rem}.contact-links,.clinks{gap:.55rem}.contact-link,.clink{min-height:44px}.plinks{flex-wrap:wrap;justify-content:flex-end}}
 @media(max-width:480px){nav{padding:.8rem 1rem}.logo{font-size:.82rem}.nav-links a{font-size:.59rem;letter-spacing:.04em}.theme-toggle{width:36px;height:36px;flex-basis:36px}.hero-name{font-size:clamp(2.8rem,15vw,4rem)}h1.hero-name{font-size:clamp(2.8rem,15vw,4rem)}section{padding:3.5rem 1rem}.hero-cta,.cta{gap:.6rem}.btn1,.btn2{padding:.72rem 1rem}.proj-card,.proj-card.proj-feat{padding:1.2rem .85rem}.ptop{gap:.55rem}.proj-links,.plinks{gap:.35rem}.plink{padding:.38rem .5rem}.resume-wrap,.contact-wrap{padding:1.1rem}.rname{font-size:1.35rem}.clinks{display:grid;grid-template-columns:1fr 1fr}.clink{justify-content:center;padding:.6rem .45rem}.cert-row{gap:.4rem}.cert{font-size:.62rem}}
 @media(prefers-reduced-motion:reduce){.proj-card,.exp-card,.sk-block,.stat,.resume-wrap,.contact-wrap,.btn1,.btn2,.plink,.clink,.rdl,.theme-toggle{transition:none!important}.proj-card:hover,.proj-card:focus-within,.exp-card:hover,.sk-block:hover,.stat:hover,.resume-wrap:hover,.contact-wrap:hover,.proj-card:active,.exp-card:active,.sk-block:active,.stat:active,.btn1:hover,.btn2:hover,.plink:hover,.clink:hover,.rdl:hover,.theme-toggle:hover,.btn1:active,.btn2:active,.plink:active,.clink:active,.rdl:active,.theme-toggle:active{transform:none!important;box-shadow:none!important}}
+</style><style id="theme-palette-guard">
+body:not(.theme-original){--bg:#F4F1EA;--s1:#EAE6DD;--s2:#e1ddd3;--a:#A65F49;--a2:#A65F49;--text:#20211F;--muted:#77766F;--bd:#D9D5CB;--sans:Georgia,'Times New Roman',serif}
+body.theme-original{--bg:#0a0a0f;--s1:#111118;--s2:#1a1a24;--a:#6ee7b7;--a2:#818cf8;--text:#f1f5f9;--muted:#64748b;--bd:#1e1e2e;--sans:'Syne',sans-serif;background:var(--bg);color:var(--text);font-family:var(--sans)}
+body{transition:background-color .22s ease,color .22s ease}body.theme-original nav{background:rgba(10,10,15,.85);border-color:var(--bd)}body.theme-original .logo{color:var(--a)}body.theme-original .nav-links a{font-family:var(--mono);text-transform:none;letter-spacing:.04em}body.theme-original #hero{min-height:100vh}body.theme-original .hero-inner{max-width:1200px;grid-template-columns:1.15fr .85fr;gap:3.5rem}body.theme-original .badge{padding:.3rem .8rem;border:1px solid rgba(110,231,183,.2);border-radius:4px;background:rgba(110,231,183,.05)}body.theme-original h1.hero-name,body.theme-original .sec-title,body.theme-original .ptitle,body.theme-original .rname{font-family:var(--sans);font-weight:800;letter-spacing:-.02em}body.theme-original h1.hero-name{font-size:clamp(2.8rem,6vw,4.8rem);line-height:1}body.theme-original h1.hero-name span,body.theme-original .sec-title span,body.theme-original .rname span{color:var(--a2)}body.theme-original .tagline,body.theme-original .pdesc,body.theme-original .sk-row,body.theme-original .robj{font-family:var(--mono)}body.theme-original .hero-card{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:1.7rem}body.theme-original .hero-card::before{display:block}body.theme-original .code-block{background:var(--s2);border-radius:8px}body.theme-original .stat{background:var(--s2);border:0;border-radius:8px}body.theme-original .kw{color:var(--a2)}body.theme-original .str{color:#f9a8d4}body.theme-original .num{color:#fcd34d}body.theme-original .str2{color:#86efac}body.theme-original section{max-width:1200px;padding:5rem 2.5rem}body.theme-original .exp-grid{gap:1.2rem;border:0}body.theme-original .exp-card{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.5rem}body.theme-original .exp-card::after{display:block}body.theme-original .proj-grid{gap:1.4rem;border:0}body.theme-original .proj-card,body.theme-original .proj-card.proj-feat{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.6rem;transform:none}body.theme-original .proj-card.proj-feat{grid-column:span 2}body.theme-original .stripe{display:block}body.theme-original .pill{background:var(--s2);color:var(--a2)}body.theme-original .sk-grid{gap:1.3rem;border:0}body.theme-original .sk-block{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.4rem}body.theme-original .resume-wrap,body.theme-original .contact-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:16px}body.theme-original .contact-wrap::before{display:block}body.theme-original .rdl{color:#0a0a0f}body.theme-original .btn1{color:#0a0a0f}
+@media(max-width:768px){body.theme-original .hero-inner{grid-template-columns:1fr}body.theme-original .proj-feat{grid-column:span 1}body.theme-original .proj-card.proj-feat{grid-column:span 1}body.theme-original section{padding:4rem 1.25rem}}
 </style></head>
 <body>
 
@@ -159,12 +164,12 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="badge"><span class="dot"></span>open to internships &amp; full-time roles</div>
       <h1 class="hero-name">Mithesh<br><span>Makam</span></h1>
       <p class="tagline">
-        <em>Full Stack + AI Engineer</em> — Pune, India.<br>
-        Multi-agent systems · LLM APIs · Scalable web apps.<br>
-        BCA @ VCACS · CGPA 9.09 · Targeting <em>FAANG-level</em> product roles.
+        <em>Full Stack + AI Engineer</em> â€” Pune, India.<br>
+        Multi-agent systems Â· LLM APIs Â· Scalable web apps.<br>
+        BCA @ VCACS Â· CGPA 9.09 Â· Targeting <em>FAANG-level</em> product roles.
       </p>
       <div class="cta">
-        <a href="#projects" class="btn1">View Projects →</a>
+        <a href="#projects" class="btn1">View Projects â†’</a>
         <a href="#resume" class="btn2">Download Resume</a>
       </div>
     </div>
@@ -194,24 +199,24 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
   <div class="exp-grid">
     <div class="exp-card">
       <div class="exp-role">AI for Sustainability Intern</div>
-      <div class="exp-co">IBM · Virtual</div>
+      <div class="exp-co">IBM Â· Virtual</div>
       <ul class="exp-bullets">
-        <li>Built AirWise — an AI-powered air quality advisor using a multi-agent architecture as the core internship deliverable.</li>
+        <li>Built AirWise â€” an AI-powered air quality advisor using a multi-agent architecture as the core internship deliverable.</li>
         <li>Applied Agentic AI, RAG, and responsible AI concepts to UN SDG-aligned sustainability problems.</li>
       </ul>
     </div>
     <div class="exp-card">
       <div class="exp-role">Full Stack Web Developer Intern</div>
-      <div class="exp-co">VaultOfCodes · Remote</div>
+      <div class="exp-co">VaultOfCodes Â· Remote</div>
       <ul class="exp-bullets">
-        <li>Designed, built, and deployed EditKaro end-to-end — independently owned the full dev lifecycle.</li>
+        <li>Designed, built, and deployed EditKaro end-to-end â€” independently owned the full dev lifecycle.</li>
         <li>Engineered a config-driven filter system; new-client setup dropped from a multi-day rebuild to one change.</li>
         <li>Resolved 4 production bug classes: codec errors, range-request failures, JS race conditions, CSS conflicts.</li>
       </ul>
     </div>
     <div class="exp-card">
       <div class="exp-role">Full Stack Developer Intern</div>
-      <div class="exp-co">Beeskilled · Remote</div>
+      <div class="exp-co">Beeskilled Â· Remote</div>
       <ul class="exp-bullets">
         <li>Shipped frontend and backend feature tickets across multiple sprints in an agile team workflow.</li>
         <li>Performed REST API testing and debugging with Postman, catching integration issues before release.</li>
@@ -234,12 +239,12 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
           <span class="hack-badge"><span class="emoji">&#x1F3C6;</span> Codex Hackathon 2026</span>
         </div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
-          <a href="https://codemedic-repo.vercel.app/" class="plink" target="_blank">Live →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
+          <a href="https://codemedic-repo.vercel.app/" class="plink" target="_blank">Live â†’</a>
         </div>
       </div>
-      <div class="ptitle">CodeMedic AI — Multi-Agent Code Review Pipeline</div>
-      <div class="pdesc">Orchestrated a 5-agent system: repository analysis → architecture summarization → bug detection → security review → README + test generation. Achieved Lighthouse 100 across performance, accessibility, and SEO with sub-0.5s load time. Submitted to ChatGPT Codex Hackathon 2026 (Agentic Coding track) with a 13-slide architecture pitch deck.</div>
+      <div class="ptitle">CodeMedic AI â€” Multi-Agent Code Review Pipeline</div>
+      <div class="pdesc">Orchestrated a 5-agent system: repository analysis â†’ architecture summarization â†’ bug detection â†’ security review â†’ README + test generation. Achieved Lighthouse 100 across performance, accessibility, and SEO with sub-0.5s load time. Submitted to ChatGPT Codex Hackathon 2026 (Agentic Coding track) with a 13-slide architecture pitch deck.</div>
       <div class="ptech">
         <span class="pill">Multi-Agent Systems</span><span class="pill">Python</span><span class="pill">LLM APIs</span><span class="pill">Agentic AI</span><span class="pill">Lighthouse 100</span>
       </div>
@@ -250,11 +255,11 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="ptop">
         <div class="pico">&#x1F9E0;</div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
-          <a href="https://valuora.vercel.app/" class="plink" target="_blank">Live →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
+          <a href="https://valuora.vercel.app/" class="plink" target="_blank">Live â†’</a>
         </div>
       </div>
-      <div class="ptitle">Valuora — AI Product Decision Engine</div>
+      <div class="ptitle">Valuora â€” AI Product Decision Engine</div>
       <div class="pdesc">E-commerce intelligence tool using Gemini 2.0 Flash to generate BUY / WAIT / AVOID verdicts via price tracking, fake-review detection, and trust scoring across 7 platforms including Amazon and Flipkart. Server-side API keys + 10 req/min rate limiting.</div>
       <div class="ptech">
         <span class="pill">Next.js</span><span class="pill">TypeScript</span><span class="pill">Gemini 2.0 Flash</span><span class="pill">Rate Limiting</span>
@@ -266,11 +271,11 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="ptop">
         <div class="pico">&#x1F4C4;</div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
-          <a href="https://resumetrack.vercel.app/" class="plink" target="_blank">Live →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
+          <a href="https://resumetrack.vercel.app/" class="plink" target="_blank">Live â†’</a>
         </div>
       </div>
-      <div class="ptitle">Resume Tracker AI — ATS Scorer + Job Matcher</div>
+      <div class="ptitle">Resume Tracker AI â€” ATS Scorer + Job Matcher</div>
       <div class="pdesc">Full-stack resume analyzer computing ATS scores and matching candidates to live job listings via the Adzuna API. Recruiter dashboard shows applicant volume, ATS-qualified rate, and average match score.</div>
       <div class="ptech">
         <span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">PostgreSQL</span><span class="pill">Adzuna API</span>
@@ -282,10 +287,10 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="ptop">
         <div class="pico">&#x1F33F;</div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
         </div>
       </div>
-      <div class="ptitle">AirWise — AI Air Quality Advisor</div>
+      <div class="ptitle">AirWise â€” AI Air Quality Advisor</div>
       <div class="pdesc">Multi-agent AI system for air quality analysis built during IBM AI for Sustainability internship. Applied Agentic AI, RAG, and responsible AI principles to address UN SDG-aligned sustainability challenges.</div>
       <div class="ptech">
         <span class="pill">Multi-Agent AI</span><span class="pill">RAG</span><span class="pill">Agentic AI</span><span class="pill">IBM</span><span class="pill">UN SDGs</span>
@@ -297,10 +302,10 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="ptop">
         <div class="pico">&#x1F4CB;</div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
         </div>
       </div>
-      <div class="ptitle">LessGo — Placement Preparation Platform</div>
+      <div class="ptitle">LessGo â€” Placement Preparation Platform</div>
       <div class="pdesc">Placement-prep platform with a Kanban tracker, 30+ company-tagged LeetCode problems, and daily streaks. Computes a Placement Readiness Score from application progress, streak consistency, and DSA problem data.</div>
       <div class="ptech">
         <span class="pill">Next.js</span><span class="pill">Node.js</span><span class="pill">PostgreSQL</span><span class="pill">Prisma ORM</span>
@@ -312,12 +317,12 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div class="ptop">
         <div class="pico">&#x1F3AC;</div>
         <div class="plinks">
-          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub →</a>
-          <a href="https://editkaroport.vercel.app/" class="plink" target="_blank">Live →</a>
+          <a href="https://github.com/MitheshMakam" class="plink" target="_blank">GitHub â†’</a>
+          <a href="https://editkaroport.vercel.app/" class="plink" target="_blank">Live â†’</a>
         </div>
       </div>
-      <div class="ptitle">EditKaro — Video Agency Portfolio Platform</div>
-      <div class="pdesc">Data-driven, reskinnable portfolio site for a video editing agency. Content, videos, and styling update via config — no core logic changes needed. Fixed 4 cross-browser media bug classes in production.</div>
+      <div class="ptitle">EditKaro â€” Video Agency Portfolio Platform</div>
+      <div class="pdesc">Data-driven, reskinnable portfolio site for a video editing agency. Content, videos, and styling update via config â€” no core logic changes needed. Fixed 4 cross-browser media bug classes in production.</div>
       <div class="ptech">
         <span class="pill">JavaScript</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">VaultOfCodes</span>
       </div>
@@ -354,10 +359,10 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
     </div>
   </div>
   <div class="cert-row">
-    <span class="cert"><span class="emoji">&#x1F393;</span> Google — Agentic AI</span>
-    <span class="cert"><span class="emoji">&#x1F393;</span> Microsoft — C#</span>
+    <span class="cert"><span class="emoji">&#x1F393;</span> Google â€” Agentic AI</span>
+    <span class="cert"><span class="emoji">&#x1F393;</span> Microsoft â€” C#</span>
     <span class="cert"><span class="emoji">&#x1F393;</span> Kaggle Learning</span>
-    <span class="cert"><span class="emoji">&#x1F393;</span> IBM SkillsBuild — AI for Sustainability</span>
+    <span class="cert"><span class="emoji">&#x1F393;</span> IBM SkillsBuild â€” AI for Sustainability</span>
   </div>
 </section>
 
@@ -370,14 +375,14 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
       <div>
         <div class="rname">Mithesh <span>Makam</span></div>
         <div style="font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.5rem;line-height:1.9">
-          Pune, Maharashtra · +91 9922938697<br>
+          Pune, Maharashtra Â· +91 9922938697<br>
           mitheshmakam6@gmail.com
         </div>
       </div>
       <div style="text-align:right">
         <div class="rcontact">
-          <a href="https://linkedin.com/in/mithesh-makam-83a12737b" target="_blank">LinkedIn ↗</a><br>
-          <a href="https://github.com/MitheshMakam" target="_blank">GitHub ↗</a>
+          <a href="https://linkedin.com/in/mithesh-makam-83a12737b" target="_blank">LinkedIn â†—</a><br>
+          <a href="https://github.com/MitheshMakam" target="_blank">GitHub â†—</a>
         </div>
         <a href="/resume.pdf" class="rdl" target="_blank"><span class="emoji">&#x2B07;</span> Download PDF</a>
       </div>
@@ -389,30 +394,30 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
     <div class="rsec">
       <div class="rsec-title">Experience</div>
       <div class="rexp-item">
-        <div class="rexp-top"><div><div class="rexp-role">AI for Sustainability Intern</div><div class="rexp-co">IBM · Virtual</div></div><div class="rexp-loc">2024</div></div>
-        <ul class="rbullets"><li>Built AirWise — an AI-powered air quality advisor using multi-agent architecture.</li><li>Applied Agentic AI, RAG, and responsible AI to UN SDG-aligned sustainability problems.</li></ul>
+        <div class="rexp-top"><div><div class="rexp-role">AI for Sustainability Intern</div><div class="rexp-co">IBM Â· Virtual</div></div><div class="rexp-loc">2024</div></div>
+        <ul class="rbullets"><li>Built AirWise â€” an AI-powered air quality advisor using multi-agent architecture.</li><li>Applied Agentic AI, RAG, and responsible AI to UN SDG-aligned sustainability problems.</li></ul>
       </div>
       <div class="rexp-item">
-        <div class="rexp-top"><div><div class="rexp-role">Full Stack Web Developer Intern</div><div class="rexp-co">VaultOfCodes · Remote</div></div><div class="rexp-loc">2024</div></div>
+        <div class="rexp-top"><div><div class="rexp-role">Full Stack Web Developer Intern</div><div class="rexp-co">VaultOfCodes Â· Remote</div></div><div class="rexp-loc">2024</div></div>
         <ul class="rbullets"><li>Built and deployed EditKaro end-to-end; engineered a config-driven filter system.</li><li>Resolved 4 production bug classes: codec, range-request, race conditions, CSS specificity.</li></ul>
       </div>
       <div class="rexp-item">
-        <div class="rexp-top"><div><div class="rexp-role">Full Stack Developer Intern</div><div class="rexp-co">Beeskilled · Remote</div></div><div class="rexp-loc">2024</div></div>
+        <div class="rexp-top"><div><div class="rexp-role">Full Stack Developer Intern</div><div class="rexp-co">Beeskilled Â· Remote</div></div><div class="rexp-loc">2024</div></div>
         <ul class="rbullets"><li>Shipped frontend + backend tickets across sprints; debugged REST endpoints with Postman.</li></ul>
       </div>
     </div>
     <div class="rsec">
       <div class="rsec-title">Projects</div>
-      <div class="rproj-item"><div class="rproj-name">CodeMedic AI <span style="font-size:.65rem;color:#fbbf24;font-family:var(--mono)">· Codex Hackathon 2026</span></div><div class="rproj-stack">Multi-Agent Systems · Python · LLM APIs · Agentic AI</div><ul class="rbullets"><li>5-agent code review pipeline; Lighthouse 100 performance/accessibility/SEO; sub-0.5s load.</li></ul></div>
-      <div class="rproj-item"><div class="rproj-name">Valuora — Product Decision Engine</div><div class="rproj-stack">Next.js · TypeScript · Gemini 2.0 Flash</div><ul class="rbullets"><li>BUY/WAIT/AVOID verdicts via price intelligence, fake-review detection, trust scoring (7 platforms).</li></ul></div>
-      <div class="rproj-item"><div class="rproj-name">Resume Tracker AI</div><div class="rproj-stack">React · FastAPI · PostgreSQL · Adzuna API</div><ul class="rbullets"><li>ATS scoring, live job matching, recruiter dashboard with volume and match-rate metrics.</li></ul></div>
-      <div class="rproj-item"><div class="rproj-name">LessGo — Placement Prep Platform</div><div class="rproj-stack">Next.js · Node.js · PostgreSQL · Prisma ORM</div><ul class="rbullets"><li>Kanban tracker, 30+ company-tagged LeetCode problems, Placement Readiness Score.</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">CodeMedic AI <span style="font-size:.65rem;color:#fbbf24;font-family:var(--mono)">Â· Codex Hackathon 2026</span></div><div class="rproj-stack">Multi-Agent Systems Â· Python Â· LLM APIs Â· Agentic AI</div><ul class="rbullets"><li>5-agent code review pipeline; Lighthouse 100 performance/accessibility/SEO; sub-0.5s load.</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">Valuora â€” Product Decision Engine</div><div class="rproj-stack">Next.js Â· TypeScript Â· Gemini 2.0 Flash</div><ul class="rbullets"><li>BUY/WAIT/AVOID verdicts via price intelligence, fake-review detection, trust scoring (7 platforms).</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">Resume Tracker AI</div><div class="rproj-stack">React Â· FastAPI Â· PostgreSQL Â· Adzuna API</div><ul class="rbullets"><li>ATS scoring, live job matching, recruiter dashboard with volume and match-rate metrics.</li></ul></div>
+      <div class="rproj-item"><div class="rproj-name">LessGo â€” Placement Prep Platform</div><div class="rproj-stack">Next.js Â· Node.js Â· PostgreSQL Â· Prisma ORM</div><ul class="rbullets"><li>Kanban tracker, 30+ company-tagged LeetCode problems, Placement Readiness Score.</li></ul></div>
     </div>
     <div class="rsec">
       <div class="rsec-title">Education</div>
       <div class="rexp-top">
-        <div><div class="rexp-role">BCA — Vishwakarma College of Arts, Commerce and Science</div><div class="rexp-co">CGPA: 9.09</div></div>
-        <div class="rexp-loc">Expected 2027 · Pune</div>
+        <div><div class="rexp-role">BCA â€” Vishwakarma College of Arts, Commerce and Science</div><div class="rexp-co">CGPA: 9.09</div></div>
+        <div class="rexp-loc">Expected 2027 Â· Pune</div>
       </div>
     </div>
     <div class="rsec" style="margin-bottom:0">
@@ -444,7 +449,7 @@ body:not(.theme-original) .proj-card:hover,body:not(.theme-original) .proj-card:
   </div>
 </section>
 
-<footer>mithesh makam · pune, india · mitheshmakam6@gmail.com · open to opportunities 2026</footer>
-<script>(()=>{const toggle=document.getElementById("theme-toggle"),editorial=document.getElementById("editorial-theme"),key="mithesh-portfolio-theme";function apply(original){document.body.classList.toggle("theme-original",original);editorial.disabled=original;toggle.setAttribute("aria-pressed",String(original));const label=original?"Switch to warm UI":"Switch to dark UI";toggle.querySelector("span").textContent=label;toggle.setAttribute("aria-label",label);toggle.setAttribute("title",label)}toggle.addEventListener("click",()=>{const original=!document.body.classList.contains("theme-original");apply(original);try{localStorage.setItem(key,original?"original":"warm")}catch(_){}});let original=false;try{original=localStorage.getItem(key)==="original"}catch(_){}apply(original)})();</script>
+<footer>mithesh makam Â· pune, india Â· mitheshmakam6@gmail.com Â· open to opportunities 2026</footer>
+<script>(()=>{const toggle=document.getElementById("theme-toggle"),editorial=document.getElementById("editorial-theme"),key="mithesh-portfolio-theme";function apply(original){document.body.classList.toggle("theme-original",original);editorial.disabled=original;editorial.media=original?"not all":"all";document.body.dataset.theme=original?"original":"warm";toggle.setAttribute("aria-pressed",String(original));const label=original?"Switch to warm UI":"Switch to dark UI";toggle.querySelector("span").textContent=label;toggle.setAttribute("aria-label",label);toggle.setAttribute("title",label)}toggle.addEventListener("click",()=>{const original=!document.body.classList.contains("theme-original");apply(original);try{localStorage.setItem(key,original?"original":"warm")}catch(_){}});let original=false;try{original=localStorage.getItem(key)==="original"}catch(_){}apply(original)})();</script>
 </body>
 </html>
